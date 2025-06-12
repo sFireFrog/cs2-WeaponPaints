@@ -102,7 +102,12 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 		Utility.Config = config;
 		Utility.ShowAd(ModuleVersion);
-		Task.Run(async () => await Utility.CheckVersion(ModuleVersion, Logger));
+
+		if (Utility.Config.CheckVersion)
+		{
+            Task.Run(async () => await Utility.CheckVersion(ModuleVersion, Logger));
+        }
+		
 	}
 
 	public override void OnAllPluginsLoaded(bool hotReload)

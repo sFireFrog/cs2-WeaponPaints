@@ -102,5 +102,8 @@ namespace WeaponPaints
 		
 		[JsonPropertyName("MenuType")]
 		public string MenuType { get; set; } = "selectable";
+
+        [JsonPropertyName("CheckVersion")]
+        public bool CheckVersion { get;set;} = false;
 	}
 }
